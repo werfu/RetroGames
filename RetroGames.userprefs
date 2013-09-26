@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="OpenMenace_Text/BiomenaceDescriptor.cs">
+    <Files>
+      <File FileName="Utils/MyClass.cs" Line="8" Column="4" />
+      <File FileName="OpenMenace_Text/Program.cs" Line="5" Column="17" />
+      <File FileName="OpenMenace_Text/BiomenaceDescriptor.cs" Line="6" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
