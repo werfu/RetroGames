@@ -8,7 +8,7 @@ namespace RetroGames.FileFormat
 		{
 		}
 
-		public System.Type type { get; protected set; }
+		public System.Type type { get; set; }
 	}
 }
 

@@ -17,6 +17,11 @@ namespace RetroGames.FileFormat
 		{
 			_list.Add (new KeyValuePair<string, Base> (name, b));
 		}
+
+		public void Add(string name, Type t)
+		{
+			_list.Add(new KeyValuePair<string, Base>(name, (Field) t));
+		}
 		#endregion
 
 		public Struct ()

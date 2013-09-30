@@ -8,7 +8,7 @@ namespace RetroGames.FileFormat
 		{
 		}
 
-		public int length { get; private set; }
+		public int length { get; set; }
 	}
 }
 
