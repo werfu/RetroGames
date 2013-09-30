@@ -5,54 +5,41 @@ namespace OpenMenace_Text
 {
 	public class BiomenaceDescriptors
 	{
-		public static var LevelHeaderDescriptor
+		public static RetroGames.FileFormat.Struct LevelHeaderDescriptor
 		{
 			get {
-				return new {
-					Offsets = { type = UInt32, length = 3 },
-					Lengths = { type = UInt16, length = 3 },
-					Width = UInt16,
-					Height = UInt16,
-					Name = { Type = Char, length = 16 }
+				return new RetroGames.FileFormat.Struct {
+					{ "Offsets", new RetroGames.FileFormat.Array { type = typeof(UInt32), length = 3 } },
+					{ "Lengths", new RetroGames.FileFormat.Array { type = typeof(UInt16), length = 3 } },
+					{ "Width", typeof(UInt16) },
+					{ "Height", typeof(UInt16) },
+					{ "Name", new RetroGames.FileFormat.Array { type = typeof(Char), length = 16 } }
 				};
 			}
 		}
 
-		public static var MapHeaderDescriptor {
+		public static RetroGames.FileFormat.Struct MapHeaderDescriptor {
 			get {
-				return new {
-					MagicWord = UInt16,
-					LevelPtr = { Type = UInt32, length = 100 },
+				return new RetroGames.FileFormat.Struct {
+					{ "MagicWord" , typeof(UInt16) },
+					{ "LevelPtr",  new RetroGames.FileFormat.Array { type = typeof(UInt32), length = 100 } }
 				};
 			}
 		}
 
-		public static var GFXInfoe {
+		public static RetroGames.FileFormat.Struct GFXInfoe {
 			get {
-				Struct Tiles = new Struct { "Background" = UInt16, "Foreground" = UInt16 };
+				RetroGames.FileFormat.Struct Tiles = new RetroGames.FileFormat.Struct { {"Background", typeof(UInt16)} , { "Foreground", typeof(UInt16) } };
+				RetroGames.FileFormat.Struct TilesTripplet = new RetroGames.FileFormat.Struct {
+					{ "Tiles8", Tiles },
+					{ "Tiles16", Tiles},
+					{ "Tiles32" , Tiles }
+				};
 
-				return new {
-					Tiles8 = {
-						Background = UInt16,
-						Foreground = UInt16
-					},
-					Tiles16 = {
-						Background = UInt16,
-						Foreground = UInt16
-					},
-					Tiles32 = {
-						Background = UInt16,
-						Foreground = UInt32
-					},
-					Starts = {
-						BackTile8 = UInt16,
-						ForeTile8 = UInt16,
-						BackTile16 = UInt16,
-						ForeTile16 = UInt16,
-						BackTile32 = UInt16,
-						ForeTile32 = UInt16,
-					},
-					UnknownText = { type = Char, length = 20 }
+				return new RetroGames.FileFormat.Struct {
+					{ "Count", TilesTripplet },
+					{ "Starts", TilesTripplet },
+					{ "UnknownText",  new RetroGames.FileFormat.Array { type = typeof(Char), length = 20 } }
 				};
 			}
 		}
