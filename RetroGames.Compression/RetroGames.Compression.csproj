@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CarmackStream.cs" />
+    <Compile Include="CompressedStream.cs" />
     <Compile Include="HuffmanStream.cs" />
     <Compile Include="RLEWStream.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
