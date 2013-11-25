@@ -1,6 +1,6 @@
 using System;
 
-namespace RetroGames.FileFormat
+namespace RetroGames.FileDescriptors
 {
 	public class BaseField : Base
 	{

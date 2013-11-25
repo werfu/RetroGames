@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace RetroGames.FileFormat
+namespace RetroGames.FileDescriptors
 {
 	public class Struct : Base, IEnumerable
 	{
