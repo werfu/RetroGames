@@ -10,7 +10,7 @@ namespace RetroGames.Compression
     public abstract class CompressedStream : Stream
     {
         #region privates
-        private int _length;
+        private long _length;
         private int innerPosition;
         #endregion
 
@@ -62,10 +62,6 @@ namespace RetroGames.Compression
                 }
                 return _length;
             }
-
-            private set { 
-                _length = (int) value;
-            }
         }
 
 
@@ -108,7 +104,9 @@ namespace RetroGames.Compression
 
         public override void SetLength(long value)
         {
-            Length = value;
+			_length = value;
+			buffer = new byte[value];
+			isProcessed = false;
         }
 
         public override void Write(byte[] buffer, int offset, int count)

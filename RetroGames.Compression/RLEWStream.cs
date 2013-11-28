@@ -19,8 +19,7 @@ namespace RetroGames.Compression
             if (!this.BaseStream.CanRead) { return false; }
 
             BinaryReader br = new BinaryReader(this.BaseStream);
-            SetLength(br.ReadInt32());
-            buffer = new byte[Length];
+            SetLength(br.ReadUInt16());
             
             UInt16 word = br.ReadUInt16();
             for (int ptr = 0; ptr < Length; word = br.ReadUInt16())
