@@ -1,6 +1,4 @@
 RetroGames
 ==========
-This library provide an abstraction layer enabling old, binary archives used by old games (80-90 era) to be read using .Net. Game
-at that time where mostly programmed in C or assembly, in 16bit real mode or 32bit using DOS extenders and game datas were usualy
-compressed and packed using various algorithms.
+Old DOS era games where mostly programmed in C or assembly, in 16bit real mode or 32bit using DOS extenders and game datas were usualy compressed and packed using various algorithms. This library goal is to provide a way to read these data structures and provide a support for the different file format used.
 
